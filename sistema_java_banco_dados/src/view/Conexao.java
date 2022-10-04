@@ -5,11 +5,17 @@ import javax.swing.JOptionPane;
 
 public class Conexao {
 
+//    private static final String DRIVER   = "org.postgresql.Driver";
+//    private static final String BANCO    = "postgres";
+//    private static final String CONEXAO  = "jdbc:postgresql://db.vdcszqvvrwdqcnjvcoxt.supabase.co/" + BANCO;
+//    private static final String USUARIO  = "postgres";
+//    private static final String SENHA    = "mB9C@SywfzkJzmS";
+    
     private static final String DRIVER   = "org.postgresql.Driver";
-    private static final String BANCO    = "postgres";
-    private static final String CONEXAO  = "jdbc:postgresql://db.vdcszqvvrwdqcnjvcoxt.supabase.co/" + BANCO;
+    private static final String BANCO    = "sistemacomercial";
+    private static final String CONEXAO  = "jdbc:postgresql://localhost/" + BANCO;
     private static final String USUARIO  = "postgres";
-    private static final String SENHA    = "mB9C@SywfzkJzmS";
+    private static final String SENHA    = "postgres";
 
     public static void main(String args[]) {
         // testa ConexaoBanco

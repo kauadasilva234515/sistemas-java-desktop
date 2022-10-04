@@ -28,21 +28,16 @@ public class ViewConsultaPessoa extends javax.swing.JDialog {
         // coloca a tela no centro
         this.setLocationRelativeTo(null);
 
-        listaTodosResistros();
+      }
 
-        //cli.setListaCli(cli.retornaClientes());
-//        for (int f = 0; f < cli.getListaCli().size(); f++) {
-//            String[] linhaResul;
-//            linhaResul = cli.getListaCli().get(f).split(";");
-//            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//            Object[] linha = {linhaResul[0], linhaResul[1], linhaResul[3], linhaResul[2]};
-//            model.addRow(linha);
-//        }
-    }
-
-    public void listaTodosResistros() {
+    public void listaTodosRegistros() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaDados.getModel();
 
+        
+       modelo.setRowCount (0);
+        
+        
+        
         // Lista todas as pessoas da classe pessoadb
         ArrayList<ModelPessoa> pessoas = pessoadb.getTodos();
 
@@ -76,6 +71,7 @@ public class ViewConsultaPessoa extends javax.swing.JDialog {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        btnpesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setModal(true);
@@ -143,6 +139,14 @@ public class ViewConsultaPessoa extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+
+        btnpesquisar.setText("Pesquisar");
+        btnpesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnpesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -239,6 +243,10 @@ public class ViewConsultaPessoa extends javax.swing.JDialog {
         jTextField1.selectAll();
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
+    private void btnpesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpesquisarActionPerformed
+        listaTodosRegistros();
+    }//GEN-LAST:event_btnpesquisarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,6 +292,7 @@ public class ViewConsultaPessoa extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnpesquisar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
